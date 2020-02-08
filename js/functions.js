@@ -18,33 +18,37 @@ function getMoveName(argMoveId) {
     if (argMoveId == 3) {
         return 'nożyce'
     }
-    printMessage('Niez znam ruchu o id' + argMoveId + '.');
-    return 'nieznany ruch';
 }
 
-
 function getResult(argComputerMove, argPlayerMove) {
-    if (computerMove == playerMove) {
+    if (argComputerMove == argPlayerMove) {
         return 'Remis!';
     }
 
-    if (playerMove == 'nieznany ruch') {
-        return 'Wprowadź liczbę 1, 2, lub 3.';
-    }
-
     if (
-        (computerMove == 'kamień' && playerMove == 'papier') ||
-        (computerMove == 'nożyce' && playerMove == 'kamień')
+        (argComputerMove == 'kamień' && argPlayerMove == 'papier') ||
+        (argComputerMove == 'nożyce' && argPlayerMove == 'kamień')
     ) {
         return 'Ty wygrywasz!';
     }
 
-    return 'Ja wygrywam!';
-
+    return 'Tym razem przegrywasz!';
 }
 
 function displayResult(argComputerMove, argPlayerMove) {
-    printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+    printMessage('Komputer zagrał ' + argComputerMove + ', a Ty ' + argPlayerMove);
     printMessage(getResult(argComputerMove, argPlayerMove));
 }
+
+function buttonClickedRock(){
+     playGame(1)
+  }
+
+  function buttonClickedPaper(){
+    playGame(2)
+ }
+
+ function buttonClickedScissors(){
+    playGame(3)
+ }
 

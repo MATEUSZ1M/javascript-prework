@@ -1,20 +1,26 @@
 
 // wybierz swój ruch
-let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
+function playGame(playerInput){
+let clear = clearMessages();
 
 console.log('Gracz wpisał: ' + playerInput);
-let playerMove = getMoveName(playerInput);
-
-printMessage('Twój ruch to: ' + playerMove);
+let argPlayerMove = getMoveName(playerInput);
 
 // losuje ruch komputera
 let randomNumber = Math.floor(Math.random() * 3 + 1);
 console.log('Wylosowana liczba to: ' + randomNumber);
 
-let computerMove = getMoveName(randomNumber);
+let argComputerMove = getMoveName(randomNumber);
 
-printMessage('Mój ruch to: ' + computerMove);
-
-let result = displayResult(computerMove, playerMove);
+let result = displayResult(argComputerMove, argPlayerMove);
 console.log(result);
+}
 
+let playRock = document.getElementById('play-rock');
+playRock.addEventListener('click', buttonClickedRock);
+
+let playPaper = document.getElementById('play-paper');
+playPaper.addEventListener('click', buttonClickedPaper);
+
+let playScissors = document.getElementById('play-scissors');
+playScissors.addEventListener('click', buttonClickedScissors);
