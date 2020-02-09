@@ -1,23 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Kamień, papier, nożyce</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 	<header>
 		<h1>Kamień Papier Nożyce</h1>
 	</header>
-	<div class="container">
-		<div id="buttons">
-			<button id="play-rock">Kamień</button>
-			<button id="play-paper">Papier</button>
-			<button id="play-scissors">Nożyce</button>
+
+	<main>
+		<div class="container">
+
+			<div class="score-board">
+				<div id="user-label" class="badge badge-l">User</div>
+				<div id="computer-label" class="badge badge-r ">Komputer</div>
+				<div class="score">
+					<span id="user-score">0</span>
+					<span>:</span>
+					<span id="computer-score">0</span>
+				</div>
+			</div>
+
+			<div class="choices">
+				<div id="play-rock" class="choice">
+					<i class="far fa-hand-rock"></i>
+				</div>
+				<div id="play-paper" class="choice">
+					<i class="far fa-hand-paper"></i>
+				</div>
+				<div id="play-scissors" class="choice">
+					<i class="far fa-hand-scissors"></i>
+				</div>
+			</div>
+			<div class="messages" id="messages"></div>
 		</div>
-		<div id="messages"></div>
-	</div>
+	</main>
 	<script src="js/functions.js"></script>
 	<script src="js/script.js"></script>
 </body>
+
 </html>
