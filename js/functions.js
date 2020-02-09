@@ -1,3 +1,30 @@
+let userScore = 0;
+let computerScore = 0;
+const userScore_span = document.getElementById('user-score');
+const computerScore_span = document.getElementById('computer-score')
+
+function win() {
+    userScore++;
+    userScore_span.innerHTML = userScore;
+    return 'Ty Wygrywasz!'
+}
+
+function lose() {
+    computerScore++;
+    computerScore_span.innerHTML = computerScore;
+    return 'Tym razem Przegrywasz!'
+}
+
+function remis() {
+    userScore++;
+    computerScore++;
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
+    return 'Remis !'
+}
+
+
+
 function printMessage(msg) {
     let div = document.createElement('div');
     div.innerHTML = msg;
@@ -22,17 +49,17 @@ function getMoveName(argMoveId) {
 
 function getResult(argComputerMove, argPlayerMove) {
     if (argComputerMove == argPlayerMove) {
-        return 'Remis!';
+        return remis();
     }
 
     if (
         (argComputerMove == 'kamień' && argPlayerMove == 'papier') ||
         (argComputerMove == 'nożyce' && argPlayerMove == 'kamień')
     ) {
-        return 'Ty wygrywasz!';
+        return win();
     }
 
-    return 'Tym razem przegrywasz!';
+    return lose();
 }
 
 function displayResult(argComputerMove, argPlayerMove) {
