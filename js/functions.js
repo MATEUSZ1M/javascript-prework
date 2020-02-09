@@ -6,13 +6,14 @@ const computerScore_span = document.getElementById('computer-score')
 function win() {
     userScore++;
     userScore_span.innerHTML = userScore;
-    return 'Ty Wygrywasz!'
+    return '<p>Ty Wygrywasz!🍾</p>'
 }
+
 
 function lose() {
     computerScore++;
     computerScore_span.innerHTML = computerScore;
-    return 'Tym razem Przegrywasz!'
+    return '<p>Tym razem Przegrywasz!💩</p>'
 }
 
 function remis() {
@@ -20,9 +21,8 @@ function remis() {
     computerScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    return 'Remis !'
+    return '<p>Remis!👥</p>'
 }
-
 
 
 function printMessage(msg) {

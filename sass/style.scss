@@ -1,37 +1,48 @@
-
+$color-one: #2c3e50;
+$color-two: #ecf0f1;
+$color-three: #e67e22;
+$color-four: #d35400;
+$color-five: #8e44ad;
 /*Global*/
+*, *::after, *::before{
+    box-sizing: border-box
+}
+
+body{
+    font-family: 'Press Start 2P', cursive;
+    background-color: $color-one;
+}
 .container{
     max-width: 50%;
     margin: 0 auto;
 }
-
-
 /*header*/
 h1{
     text-align: center;
-    font-size: 60px;
+    font-size: 2.5rem;
     letter-spacing: 2px;
+    color: $color-two;
 }
 /*main*/
 
 
 /*score board*/
 .score-board{
-    max-width: 300px;
-    height: 200px;
+    max-width: 420px;
+    height: 350px;
     margin: 0 auto;
     position: relative;
-    border: 3px solid;
-    background: white;
+    border: 5px solid $color-three;
+    background: $color-two;
 }
 .badge{
-    width: 90px;
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
     text-align: center;
-    border: 3px solid;
-    background: tomato;
+    border: 5px solid $color-two;
+    background-color: $color-three;
+    padding: 0.2em 0.4em;
 }
 
 .badge-l{
@@ -39,11 +50,11 @@ h1{
 }
 
 .badge-r{
-   right: -45px;
+   right: -90px;
 }
 
 .score{
-    font-size: 40px;
+    font-size: 1.5rem;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -65,15 +76,24 @@ h1{
         text-align: center;
         border: 4px solid;
         border-radius: 50%;
+        color: $color-two;
+        background-color: $color-three;
+        &:hover{
+            background-color: $color-four;
+        }
+        &:active{
+            color: $color-five;
+        }
     }
 }
 /*messages*/
 .messages{
     text-align: center;
-    font-size: 30px;
     height: 120px;
-    text-transform: uppercase;
-    background-color: burlywood;
+    border: 5px solid $color-two;
+    background-color: $color-three;
     padding: 20px 0 0 0;
-   
+    p{
+        font-size: 1.5rem;
+    }
 }
