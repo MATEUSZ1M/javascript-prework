@@ -1,29 +1,37 @@
-let userScore = 0;
-let computerScore = 0;
-const userScore_span = document.getElementById('user-score');
-const computerScore_span = document.getElementById('computer-score')
+window.userScore = 0;
+window.computerScore = 0;
+const userScoreSpan = document.getElementById('user-score');
+const computerScoreSpan = document.getElementById('computer-score')
 
 function win() {
     userScore++;
-    userScore_span.innerHTML = userScore;
+    userScoreSpan.innerHTML = userScore;
+    console.log('Wynik Gracza ' + userScore);
+     if (userScore >= 10){
+        return (alert('Ty wygrałeś. Wciśnij F5 aby kontynuować'))
+     }
     return '<p>Ty Wygrywasz!🍾</p>'
 }
 
-
 function lose() {
     computerScore++;
-    computerScore_span.innerHTML = computerScore;
+    computerScoreSpan.innerHTML = computerScore;
+    console.log('Wynik komputera ' + computerScore);
+    if (computerScore >= 10){
+        return (alert ('Komputer wygrał. Wciśnij F5 aby kontynuować'))
+     }
     return '<p>Tym razem Przegrywasz!💩</p>'
 }
 
 function remis() {
     userScore++;
+    console.log('Wynik Gracza ' + userScore);
     computerScore++;
-    userScore_span.innerHTML = userScore;
-    computerScore_span.innerHTML = computerScore;
+    console.log('Wynik komputera ' + computerScore);
+    userScoreSpan.innerHTML = userScore;
+    computerScoreSpan.innerHTML = computerScore;
     return '<p>Remis!👥</p>'
 }
-
 
 function printMessage(msg) {
     let div = document.createElement('div');
@@ -58,7 +66,7 @@ function getResult(argComputerMove, argPlayerMove) {
     ) {
         return win();
     }
-
+    
     return lose();
 }
 
@@ -78,4 +86,3 @@ function buttonClickedRock(){
  function buttonClickedScissors(){
     playGame(3)
  }
-
