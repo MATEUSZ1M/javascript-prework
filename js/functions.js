@@ -3,7 +3,7 @@ window.computerScore = 0;
 const userScoreSpan = document.getElementById('user-score');
 const computerScoreSpan = document.getElementById('computer-score')
 
-const win = function () {
+win = () => {
     userScore++;
     userScoreSpan.innerHTML = userScore;
     console.log('Wynik Gracza ' + userScore);
@@ -13,7 +13,7 @@ const win = function () {
     return '<p>Ty Wygrywasz!🍾</p>'
 }
 
-const lose = function () {
+lose = () => {
     computerScore++;
     computerScoreSpan.innerHTML = computerScore;
     console.log('Wynik komputera ' + computerScore);
@@ -21,9 +21,9 @@ const lose = function () {
         return (alert('Komputer wygrał. Wciśnij F5 aby kontynuować'))
     }
     return '<p>Tym razem Przegrywasz!💩</p>'
-}
+};
 
-const remis = function () {
+remis = () => {
     userScore++;
     console.log('Wynik Gracza ' + userScore);
     computerScore++;
@@ -33,17 +33,17 @@ const remis = function () {
     return '<p>Remis!👥</p>'
 }
 
-const printMessage = function (msg) {
+printMessage = (msg) => {
     let div = document.createElement('div');
     div.innerHTML = msg;
     document.getElementById('messages').appendChild(div);
 }
 
-const clearMessages = function () {
+clearMessages = () => {
     document.getElementById('messages').innerHTML = '';
 }
 
-const getMoveName = function (argMoveId) {
+getMoveName = (argMoveId) => {
     if (argMoveId == 1) {
         return 'kamień';
     }
@@ -55,7 +55,7 @@ const getMoveName = function (argMoveId) {
     }
 }
 
-const getResult = function (argComputerMove, argPlayerMove) {
+getResult = (argComputerMove, argPlayerMove) => {
     if (argComputerMove == argPlayerMove) {
         return remis();
     }
@@ -70,19 +70,19 @@ const getResult = function (argComputerMove, argPlayerMove) {
     return lose();
 }
 
-const  displayResult = function(argComputerMove, argPlayerMove) {
+displayResult = (argComputerMove, argPlayerMove) => {
     printMessage('Komputer zagrał ' + argComputerMove + ', a Ty ' + argPlayerMove);
     printMessage(getResult(argComputerMove, argPlayerMove));
 }
 
-const buttonClickedRock = function () {
+buttonClickedRock = () => {
     playGame(1)
 }
 
-const buttonClickedPaper = function () {
+buttonClickedPaper = () => {
     playGame(2)
 }
 
-const buttonClickedScissors = function () {
+buttonClickedScissors = () => {
     playGame(3)
 }

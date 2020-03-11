@@ -1,9 +1,12 @@
 
 // wybierz swój ruch
 {
-    const rockSelector = 'play-rock',
-        paperSelector = 'play-paper',
-        scissorsSelector = 'play-scissors';
+    const select = {
+        scissors : 'play-scissors',
+        paper: 'play-paper',
+        rock: 'play-rock',
+    };
+
     function playGame(playerInput) {
         let clear = clearMessages();
 
@@ -20,13 +23,13 @@
         console.log(result);
     }
 
-    const playRock = document.getElementById(rockSelector);
+    const playRock = document.getElementById(select.rock);
     playRock.addEventListener('click', buttonClickedRock);
 
-    const playPaper = document.getElementById(paperSelector);
+    const playPaper = document.getElementById(select.paper);
     playPaper.addEventListener('click', buttonClickedPaper);
 
-    const playScissors = document.getElementById(scissorsSelector);
+    const playScissors = document.getElementById(select.scissors);
     playScissors.addEventListener('click', buttonClickedScissors);
 
 }
