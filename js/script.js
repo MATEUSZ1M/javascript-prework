@@ -1,29 +1,32 @@
 
 // wybierz swój ruch
 {
+    const rockSelector = 'play-rock',
+        paperSelector = 'play-paper',
+        scissorsSelector = 'play-scissors';
     function playGame(playerInput) {
         let clear = clearMessages();
 
         console.log('Gracz wpisał: ' + playerInput);
-        let argPlayerMove = getMoveName(playerInput);
+        const argPlayerMove = getMoveName(playerInput);
 
         // losuje ruch komputera
-        let randomNumber = Math.floor(Math.random() * 3 + 1);
+        const randomNumber = Math.floor(Math.random() * 3 + 1);
         console.log('Wylosowana liczba to: ' + randomNumber);
 
-        let argComputerMove = getMoveName(randomNumber);
+        const argComputerMove = getMoveName(randomNumber);
 
-        let result = displayResult(argComputerMove, argPlayerMove);
+        const result = displayResult(argComputerMove, argPlayerMove);
         console.log(result);
     }
 
-    let playRock = document.getElementById('play-rock');
+    const playRock = document.getElementById(rockSelector);
     playRock.addEventListener('click', buttonClickedRock);
 
-    let playPaper = document.getElementById('play-paper');
+    const playPaper = document.getElementById(paperSelector);
     playPaper.addEventListener('click', buttonClickedPaper);
 
-    let playScissors = document.getElementById('play-scissors');
+    const playScissors = document.getElementById(scissorsSelector);
     playScissors.addEventListener('click', buttonClickedScissors);
 
 }
