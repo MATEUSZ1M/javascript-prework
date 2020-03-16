@@ -3,7 +3,7 @@ window.computerScore = 0;
 const userScoreSpan = document.getElementById('user-score');
 const computerScoreSpan = document.getElementById('computer-score')
 
-win = () => {
+const win = () => {
     userScore++;
     userScoreSpan.innerHTML = userScore;
     console.log('Wynik Gracza ' + userScore);
@@ -13,7 +13,7 @@ win = () => {
     return '<p>Ty Wygrywasz!🍾</p>'
 }
 
-lose = () => {
+const lose = () => {
     computerScore++;
     computerScoreSpan.innerHTML = computerScore;
     console.log('Wynik komputera ' + computerScore);
@@ -23,7 +23,7 @@ lose = () => {
     return '<p>Tym razem Przegrywasz!💩</p>'
 };
 
-remis = () => {
+const remis = () => {
     userScore++;
     console.log('Wynik Gracza ' + userScore);
     computerScore++;
@@ -33,17 +33,17 @@ remis = () => {
     return '<p>Remis!👥</p>'
 }
 
-printMessage = (msg) => {
+const printMessage = (msg) => {
     let div = document.createElement('div');
     div.innerHTML = msg;
     document.getElementById('messages').appendChild(div);
 }
 
-clearMessages = () => {
+const clearMessages = () => {
     document.getElementById('messages').innerHTML = '';
 }
 
-getMoveName = (argMoveId) => {
+const getMoveName = (argMoveId) => {
     if (argMoveId == 1) {
         return 'kamień';
     }
@@ -55,7 +55,7 @@ getMoveName = (argMoveId) => {
     }
 }
 
-getResult = (argComputerMove, argPlayerMove) => {
+const getResult = (argComputerMove, argPlayerMove) => {
     if (argComputerMove == argPlayerMove) {
         return remis();
     }
@@ -70,19 +70,19 @@ getResult = (argComputerMove, argPlayerMove) => {
     return lose();
 }
 
-displayResult = (argComputerMove, argPlayerMove) => {
+const displayResult = (argComputerMove, argPlayerMove) => {
     printMessage('Komputer zagrał ' + argComputerMove + ', a Ty ' + argPlayerMove);
     printMessage(getResult(argComputerMove, argPlayerMove));
 }
 
-buttonClickedRock = () => {
+const buttonClickedRock = () => {
     playGame(1)
 }
 
-buttonClickedPaper = () => {
+const buttonClickedPaper = () => {
     playGame(2)
 }
 
-buttonClickedScissors = () => {
+const buttonClickedScissors = () => {
     playGame(3)
 }
